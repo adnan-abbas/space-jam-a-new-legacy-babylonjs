@@ -12,6 +12,7 @@ import {
 } from "babylonjs";
 import * as cannon from "cannon";
 import { WoodProceduralTexture } from "babylonjs-procedural-textures";
+import {Environment} from "./environment"
 
 var canvas = document.getElementById("renderCanvas") as HTMLCanvasElement;
 
@@ -50,7 +51,9 @@ var createScene = async function () {
   scene.enablePhysics(new Vector3(0, -3, 0), cannonPlugin);
 
   // Create the default environment
-  const env = scene.createDefaultEnvironment();
+  const environment = new Environment(scene, engine);
+  environment.init();
+  //const env = scene.createDefaultEnvironment(); we replaced the default environment by the one above.
 
   // Create a floor in the scene and position it to the center
   var gymFloor = MeshBuilder.CreateGround("ground", { width: 60, height: 60 }, scene);
@@ -95,6 +98,7 @@ var createScene = async function () {
 // Create a default engine to load the scene
 try {
   engine = createDefaultEngine();
+  //write our customized engine
 } catch (e) {
   console.log(
     "the available createEngine function failed. Creating the default engine instead"

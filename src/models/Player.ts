@@ -3,6 +3,5 @@ export class Player {
     imgUrl: string;
     model: string;
     per: number;
-
 }
 

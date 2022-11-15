@@ -39,3 +39,7 @@ module.exports = {
   ],
   mode: "development",
 };
+
+devServer: {
+  allowedHosts: "all"
+}

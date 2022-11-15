@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack-dev-server --mode development --hot --host 0.0.0.0 --port 8080",
+    "start": "webpack-dev-server --mode development --hot --host 0.0.0.0 --port 8090 --disable-host-check",
     "start:test": "webpack-dev-server"
   },
   "author": "",
